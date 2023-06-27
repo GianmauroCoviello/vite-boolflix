@@ -7,11 +7,11 @@ export default {
 <!-- parte grafica -->
 <template lang="">
     <div>
-    
+        
     </div>
 </template>
 
 <!-- parte di style -->
-<style lang="">
+<style lang="scss" scoped>
   
 </style>

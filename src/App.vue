@@ -7,7 +7,7 @@ export default {
   // chiamata componenti
   components:{
     AppHeader,
-    AppMain
+    AppMain,
 
   }
   
@@ -16,12 +16,15 @@ export default {
 
 <!-- parte grafica -->
 <template lang="">
-    <div>
-    
-    </div>
+    <AppHeader/>
 </template>
 
 <!-- parte di style -->
-<style lang="">
+<style lang="scss">
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
   
 </style>
