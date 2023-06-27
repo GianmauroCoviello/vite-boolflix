@@ -2,14 +2,21 @@
 <script>
 // importazione delle componenti
 import AppHeader from './components/AppHeader.vue';
-import AppMain from './components/AppMain.vue';
+import AppListMovies from './components/AppListMovies.vue';
+import store from '../src/store.js'
 export default {
   // chiamata componenti
-  components:{
-    AppHeader,
-    AppMain,
+    components:{
+      AppHeader,
+      AppListMovies,
 
-  }
+    },
+    data() {
+      return {
+          store
+        
+      }
+    },
   
 }
 </script>
@@ -17,6 +24,7 @@ export default {
 <!-- parte grafica -->
 <template lang="">
     <AppHeader/>
+    <AppListMovies/>
 </template>
 
 <!-- parte di style -->
