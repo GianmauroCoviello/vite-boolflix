@@ -16,7 +16,8 @@ export default {
             <!-- chiamata delle props nei figli -->
         <p>{{ myFilm.title }}</p>
         <p>{{ myFilm.original_title }}</p>
-        <p>{{ myFilm.original_language }}</p>
+        <!-- inserita una img con percorso nei node_modules per prendere le country flag che rappresenteranno la lingua originale -->
+        <img class="icons" :src="`../../node_modules/country-flag-icons/1x1/${myFilm.original_language.toUpperCase()}.svg`" alt="">
         <p>{{ myFilm.vote_average }}</p>
              
     </div>
@@ -24,5 +25,8 @@ export default {
 
 <!-- parte di style -->
 <style lang="scss" scoped>
+.icons{
+    width: 20px;
+}
 
 </style>
