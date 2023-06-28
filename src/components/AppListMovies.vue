@@ -58,7 +58,6 @@ export default {
 
 
         .container-card{
-            border: 2px solid black;
             width: calc(100%/3 - 40px);
             margin: 20px ;
 

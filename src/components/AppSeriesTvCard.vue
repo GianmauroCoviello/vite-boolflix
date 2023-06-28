@@ -34,51 +34,83 @@
         <!-- chiamata delle props nei figli -->
         <!-- aggiunta immagini dei film componendo il path con il link, la dimensione e il dato dell'API -->
         <img class="cover-movies" :src="`https://image.tmdb.org/t/p/w342/${mySeriesTv.poster_path}`" alt="">
-        <p><strong>Titolo:</strong>{{ mySeriesTv.name }}</p>
-        <p><strong>Titolo Originale</strong>:{{ mySeriesTv.original_name }}</p>
+        <div class="content-description overlay">
+            <p><strong>Titolo:</strong>{{ mySeriesTv.name }}</p>
+            <p><strong>Titolo Originale:</strong>{{ mySeriesTv.original_name }}</p>
+            <p><strong>Descrizione:</strong>{{ mySeriesTv.overview }}</p>
 
-        <div class="content-star-vote">
-            <!-- cicliamo le stelline in base al numero della valutazione arrotondato nella funzione -->
-            <p class="star-vote" v-for="(star,index) in getStarVote()">
-                <i class="fa-star fa-solid"></i>
-            </p>
+            <div class="content-star-vote">
+                <!-- cicliamo le stelline in base al numero della valutazione arrotondato nella funzione -->
+                <p class="star-vote" v-for="(star,index) in getStarVote()">
+                    <i class="fa-star fa-solid"></i>
+                </p>
+            </div>
+        
+            <!-- inserita una img con percorso nei node_modules per prendere le country flag che rappresenteranno la lingua originale -->
+            <img class="icons" :src="`../../node_modules/country-flag-icons/1x1/${mySeriesTv.original_language.toUpperCase()}.svg`" >
+            <!-- aggiunta la proprietà toUpperCase perche le country-flag sono in maiuscolo -->
+
         </div>
-        
-        <!-- inserita una img con percorso nei node_modules per prendere le country flag che rappresenteranno la lingua originale -->
-        <img class="icons" :src="`../../node_modules/country-flag-icons/1x1/${mySeriesTv.original_language.toUpperCase()}.svg`" >
-        
-
     </div>
 </template>
 
 <!-- parte di style -->
 <style lang="scss" scoped>
-    .icons{
-        width: 20px;
-        margin: 5px;
-    }
-    .cover-movies{
-    height: 500px;
-    width: 100%;
-    }
-    p{
-        color: white;
-        padding: 5px;
-        
 
-        strong{
-            padding-right: 10px;
+    .content-card{
+        position: relative;
+        .icons{
+            width: 20px;
+            margin: 5px;
+        }
+        .cover-movies{
+            height: 500px;
+            width: 100%;
+
+            
             
         }
-    }
-    .content-star-vote{
-        display: flex;
-        padding-left: 5px;
-
-        .star-vote{
-            color: yellow;
-            padding: 0;
+        p{
+            color: white;
+            padding: 3px;
+            
+            strong{
+                padding-right: 10px;
+            }
         }
-    }
 
+        .content-star-vote{
+            display: flex;
+            padding-left: 5px;
+
+            .star-vote{
+                color: yellow;
+                padding: 0;
+            }
+        }
+
+        .content-description{
+            padding: 30px 20px;
+            overflow-y: auto;
+            
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #000000;
+            color: #fff;
+
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+        // .overlay:hover{
+        //     opacity: 0.7;
+        // }
+    }
 </style>

@@ -41,11 +41,16 @@ export default {
             <p><strong>Descrizione:</strong>{{ myFilm.overview }}</p>
             <div class="content-star-vote">
             <!-- cicliamo le stelline in base al numero della valutazione arrotondato nella funzione -->
-            <p class="star-vote" v-for="(star,index) in getStarVote()">
-                <i class="fa-star fa-solid"></i>
-            </p>
+            <div class="content-star-vote">
+                <p class="star-vote" v-for="(star,index) in getStarVote()">
+                    <i class="fa-star fa-solid"></i>
+                </p>
+            </div>
+            
+            
             <!-- inserita una img con percorso nei node_modules per prendere le country flag che rappresenteranno la lingua originale -->
             <img class="icons" :src="`../../node_modules/country-flag-icons/1x1/${myFilm.original_language.toUpperCase()}.svg`" alt="">
+            <!-- aggiunta la proprietà toUpperCase perche le country-flag sono in maiuscolo -->
         
         </div>
     </div>         
@@ -60,6 +65,7 @@ export default {
         .icons{
             width: 20px;
             margin: 5px;
+            
         }
         .cover-movies{
             height: 500px;
@@ -70,7 +76,7 @@ export default {
         }
         p{
             color: white;
-            padding: 5px;
+            padding: 3px;
             
             strong{
                 padding-right: 10px;
