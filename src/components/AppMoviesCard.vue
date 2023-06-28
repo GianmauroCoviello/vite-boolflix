@@ -23,6 +23,7 @@ export default {
         <p>{{ myFilm.original_language }}</p>
         <p>{{ myFilm.vote_average }}</p>
          -->
+        <p>{{ myfilm.original_title }}</p>
              
     </div>
 </template>
