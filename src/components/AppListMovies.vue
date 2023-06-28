@@ -27,7 +27,7 @@ export default {
             <div class="container-card" v-for="(film,index) in store.moviesArray" :key="index">
                 <!-- inserita la props nel padre -->
                 <AppMoviesCard :myFilm="film"/>
-                <!-- <AppMoviesCard :mySeriesTv="Serie"/> -->
+                
                 
             </div>
             <div class="container-card" v-for="(serie,index) in store.seriesArray" :key="index">
@@ -46,7 +46,7 @@ export default {
 
 <style lang="scss" scoped>
 .container{
-
+    
 
     .row{
         width: 1170px;
@@ -57,9 +57,12 @@ export default {
 
         .container-card{
             border: 2px solid black;
-            width: calc(100%/3 - 20px);
-            height: 200px;
-            margin: 10px;
+            width: calc(100%/3 - 40px);
+            margin: 20px ;
+
+
+           
+            
         }
     }
 

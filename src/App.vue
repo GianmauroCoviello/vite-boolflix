@@ -78,5 +78,8 @@ export default {
     margin: 0;
     box-sizing: border-box;
   }
+  body{
+    background-color: rgb(35, 34, 34);
+  }
   
 </style>
