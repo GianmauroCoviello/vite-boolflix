@@ -1,7 +1,7 @@
 <script>
 
 export default {
-    // CH
+    
     props:{
         myFilm: Object
 
@@ -12,14 +12,11 @@ export default {
 
 <!-- parte grafica -->
 <template lang="">
-    <div>
-        <!-- <img :src="myMovies.backdrop_path" alt="">
+    <div>    
         <p>{{ myfilm.title }}</p>
         <p>{{ myFilm.original_title }}</p>
         <p>{{ myFilm.original_language }}</p>
         <p>{{ myFilm.vote_average }}</p>
-         -->
-        
              
     </div>
 </template>
