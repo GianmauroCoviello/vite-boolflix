@@ -1,7 +1,7 @@
 <script>
 
 export default {
-    
+    // importazione della props
     props:{
         myFilm: Object
 
@@ -12,8 +12,9 @@ export default {
 
 <!-- parte grafica -->
 <template lang="">
-    <div>    
-        <p>{{ myfilm.title }}</p>
+    <div>
+            <!-- chiamata delle props nei figli -->
+        <p>{{ myFilm.title }}</p>
         <p>{{ myFilm.original_title }}</p>
         <p>{{ myFilm.original_language }}</p>
         <p>{{ myFilm.vote_average }}</p>

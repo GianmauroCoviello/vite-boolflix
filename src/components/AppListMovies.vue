@@ -22,18 +22,10 @@ export default {
     <div class="container">
         <div class='row'>
             <!-- ciclaggio delle card nell'array che conterra le informazioni dell'API dei film -->
-            <div class="container-card" v-for="(movie,index) in store.moviesArray" :key="index">
-                <!-- TEST -->
+            <div class="container-card" v-for="(film,index) in store.moviesArray" :key="index">
+                <!-- inserita la props nel padre -->
                 <AppMoviesCard :myFilm="film"/>
-                <!-- <p>{{ movie.title }}</p>
-                <p>{{ movie.original_title }}</p>
-                <p>{{ movie.original_language }}</p>
-                <p>{{ movie.vote_average }}</p> -->
                 
-                
-                
-                
-        
             </div>
             
         </div>
