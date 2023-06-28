@@ -35,48 +35,79 @@ export default {
             <!-- chiamata delle props nei figli -->
         <img class="cover-movies" :src="`https://image.tmdb.org/t/p/w342/${myFilm.poster_path}`" alt="">    
         
-        
-        <p><strong>Titolo:</strong>{{ myFilm.title }}</p>
-        <p><strong>Titolo Originale:</strong>{{ myFilm.original_title }}</p>
-        <div class="content-star-vote">
+        <div class="content-description overlay">
+            <p><strong>Titolo:</strong>{{ myFilm.title }}</p>
+            <p><strong>Titolo Originale:</strong>{{ myFilm.original_title }}</p>
+            <p><strong>Descrizione:</strong>{{ myFilm.overview }}</p>
+            <div class="content-star-vote">
             <!-- cicliamo le stelline in base al numero della valutazione arrotondato nella funzione -->
             <p class="star-vote" v-for="(star,index) in getStarVote()">
                 <i class="fa-star fa-solid"></i>
             </p>
+            <!-- inserita una img con percorso nei node_modules per prendere le country flag che rappresenteranno la lingua originale -->
+            <img class="icons" :src="`../../node_modules/country-flag-icons/1x1/${myFilm.original_language.toUpperCase()}.svg`" alt="">
+        
         </div>
-        
-        
-        <!-- inserita una img con percorso nei node_modules per prendere le country flag che rappresenteranno la lingua originale -->
-        <img class="icons" :src="`../../node_modules/country-flag-icons/1x1/${myFilm.original_language.toUpperCase()}.svg`" alt="">
-        
-             
+    </div>         
     </div>
 </template>
 
 <!-- parte di style -->
 <style lang="scss" scoped>
-.icons{
-    width: 20px;
-}
-.cover-movies{
-    height: 500px;
-    width: 100%;
 
-    
-    
-}
-p{
-    color: white;
-    
-    strong{
-        padding-right: 10px;
-    }
-}
-.content-star-vote{
-    display: flex;
+    .content-card{
+        position: relative;
+        .icons{
+            width: 20px;
+            margin: 5px;
+        }
+        .cover-movies{
+            height: 500px;
+            width: 100%;
 
-    .star-vote{
-        color: yellow;
+            
+            
+        }
+        p{
+            color: white;
+            padding: 5px;
+            
+            strong{
+                padding-right: 10px;
+            }
+        }
+
+        .content-star-vote{
+            display: flex;
+            padding-left: 5px;
+
+            .star-vote{
+                color: yellow;
+                padding: 0;
+            }
+        }
+
+        .content-description{
+            padding: 30px 20px;
+            
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #000000;
+            color: #fff;
+
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+        // .overlay:hover{
+        //     opacity: 0.7;
+        // }
     }
-}
 </style>

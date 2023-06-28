@@ -28,7 +28,7 @@ export default {
 		getMovies(){
 			// dichiaro una variabile che conterrà l'API dei film in store
 			let moviesUrl = store.apiMovies
-      let seriesTvUrl= store.apiSeriesTv
+      		let seriesTvUrl= store.apiSeriesTv
 			
 			// condizione: se sulla barra di ricerca la stringa e diversa da stringa vuota, allora aggiungo una query string con un valore definito dalla parola inserita nell'input
 			if (store.SearchText != '') {
@@ -36,10 +36,10 @@ export default {
 			}
 
       
-      if (store.SearchText != '') {
-        seriesTvUrl += `&query=${store.SearchText}`
+      		if (store.SearchText != '') {
+        	seriesTvUrl += `&query=${store.SearchText}`
         
-      }
+      		}
 			console.log('Emit Funziona')
 
 
@@ -47,12 +47,14 @@ export default {
 			axios.get(moviesUrl).then((response) => {
 				// inseriamo nell'array vuoto il response dell'API sotto un formato JSON
 				store.moviesArray = response.data.results
+        		
 				
 			})
 
-      axios.get(seriesTvUrl).then((response) => {
+      		axios.get(seriesTvUrl).then((response) => {
 				// inseriamo nell'array vuoto il response dell'API sotto un formato JSON
 				store.seriesArray = response.data.results
+        
 				console.log(response.data.results)
 			})
 			

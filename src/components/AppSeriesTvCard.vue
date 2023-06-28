@@ -55,6 +55,7 @@
 <style lang="scss" scoped>
     .icons{
         width: 20px;
+        margin: 5px;
     }
     .cover-movies{
     height: 500px;
@@ -62,6 +63,7 @@
     }
     p{
         color: white;
+        padding: 5px;
         
 
         strong{
@@ -71,9 +73,11 @@
     }
     .content-star-vote{
         display: flex;
+        padding-left: 5px;
 
         .star-vote{
             color: yellow;
+            padding: 0;
         }
     }
 

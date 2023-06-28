@@ -5,7 +5,8 @@ import { store } from '../data/store';
 export default {
     components:{
         AppMoviesCard,
-        AppSeriesTvCard
+        AppSeriesTvCard,
+
     },
     data() {
         return {
@@ -37,11 +38,12 @@ export default {
                 
             </div>
             
+
+            
             
         </div>
     </div>
-
-    
+       
 </template>
 
 <style lang="scss" scoped>
