@@ -1,5 +1,6 @@
 <script>
     export default {
+        // importazione props
         props:{
             mySeriesTv:Object
         }
@@ -10,6 +11,7 @@
 <!-- parte grafica -->
 <template lang="">
     <div>
+        <!-- chiamata delle props nei figli -->
         <p>{{ mySeriesTv.name }}</p>
         <p>{{ mySeriesTv.original_name }}</p>
         <!-- inserita una img con percorso nei node_modules per prendere le country flag che rappresenteranno la lingua originale -->
