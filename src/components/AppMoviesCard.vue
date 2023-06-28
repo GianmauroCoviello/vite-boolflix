@@ -1,26 +1,33 @@
 <script>
+import { store } from '../data/store';
 export default {
+    // CH
     props:{
-        MyMovies: Object
-    }
-  
+        myFilm: Object
+
+    },
+    data() {
+        return {
+            store
+        }
+    },
 }
 </script>
 
 <!-- parte grafica -->
 <template lang="">
-    <div class="container-card">
-        
+    <div>
+        <!-- <img :src="myMovies.backdrop_path" alt="">
+        <p>{{ myfilm.title }}</p>
+        <p>{{ myFilm.original_title }}</p>
+        <p>{{ myFilm.original_language }}</p>
+        <p>{{ myFilm.vote_average }}</p>
+         -->
+             
     </div>
 </template>
 
 <!-- parte di style -->
 <style lang="scss" scoped>
-.container-card{
-    border: 2px solid black;
-    width: calc(100%/3);
-    height: 200px;
 
-}
-  
 </style>

@@ -1,16 +1,16 @@
 <script>
 import AppMoviesCard from './AppMoviesCard.vue';
-import { store } from '../store.js';
+import { store } from '../data/store';
 export default {
     components:{
         AppMoviesCard
     },
     data() {
-    return {
-        store
-      
-    }
-  },
+        return {
+            store
+        
+        }
+    },
   
 
     
@@ -21,7 +21,16 @@ export default {
    
     <div class="container">
         <div class='row'>
-            <AppMoviesCard :MyMovies="film"/> 
+            <!-- ciclaggio delle card nell'array che conterra le informazioni dell'API dei film -->
+            <div class="container-card" v-for="(movie,index) in store.moviesArray" :key="index">
+                <!-- TEST -->
+                <p>{{movie.original_title}}</p> <!--titolo del film-->
+                
+                
+                
+        
+            </div>
+            
         </div>
     </div>
 
@@ -35,10 +44,18 @@ export default {
     .row{
         width: 1170px;
         margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
 
-        
-        
+
+        .container-card{
+            border: 2px solid black;
+            width: calc(100%/3 - 20px);
+            height: 200px;
+            margin: 10px;
+        }
     }
+
 }
     
 </style>

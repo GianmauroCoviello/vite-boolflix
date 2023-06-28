@@ -1,5 +1,11 @@
 <script>
+import { store } from '../data/store';
 export default {
+    data() {
+        return {
+            store
+        }
+    },
 
 }
 </script>
@@ -15,8 +21,9 @@ export default {
                     </div>
                     
                     <div class="content-searchbar">
-                        <input type="text" placeholder="Search movies or series tv">
-                        <button>SEARCH</button>
+                        <!-- inseriamo l'input di ricerca che avrà un $emit contenuto nella funzione @input che consentira il filtraggio solamente riempiendo la barra di ricerca  -->
+                        <input type="text" placeholder="Search movies or series tv" v-model="store.SearchText" @input="$emit('search')">
+                        
                     </div>
                     
                 </nav>
@@ -45,7 +52,7 @@ export default {
                     justify-content: space-between;
                     
                     h1{
-                        color: rgb(76, 14, 14);
+                        color: rgb(153, 24, 24);
                     }
 
 
