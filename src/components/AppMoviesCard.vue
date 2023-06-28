@@ -1,16 +1,12 @@
 <script>
-import { store } from '../data/store';
+
 export default {
     // CH
     props:{
         myFilm: Object
 
     },
-    data() {
-        return {
-            store
-        }
-    },
+    
 }
 </script>
 
@@ -23,7 +19,7 @@ export default {
         <p>{{ myFilm.original_language }}</p>
         <p>{{ myFilm.vote_average }}</p>
          -->
-        <p>{{ myfilm.original_title }}</p>
+        
              
     </div>
 </template>

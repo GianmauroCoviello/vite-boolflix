@@ -7,6 +7,7 @@
 <!-- parte grafica -->
 <template lang="">
     <div>
+        <p>{{myFilm.original_title}}</p>
 
     </div>
 </template>
