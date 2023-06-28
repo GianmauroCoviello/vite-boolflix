@@ -6,6 +6,20 @@ export default {
         myFilm: Object
 
     },
+    mounted() {
+        this.getStarVote
+    },
+    methods: {
+        getStarVote(){
+            let newVoteaverage = this.myFilm.vote_average
+            let roundVote = Math.round(newVoteaverage / 2)
+
+            console.log(roundVote)
+            return roundVote
+
+        }
+        
+    },
     
 }
 </script>
@@ -18,8 +32,13 @@ export default {
         
         
         <p><strong>Titolo:</strong>{{ myFilm.title }}</p>
-        <p><strong>Titolo Originale:</strong><p>{{ myFilm.original_title }}</p></p>
-        <p><strong>Voto:</strong>{{ myFilm.vote_average }}</p>
+        <p><strong>Titolo Originale:</strong>{{ myFilm.original_title }}</p>
+        <div class="content-star-vote">
+            <p class="star-vote" v-for="(star,index) in getStarVote()">
+                <i class="fa-star fa-solid"></i>
+            </p>
+        </div>
+        
         
         <!-- inserita una img con percorso nei node_modules per prendere le country flag che rappresenteranno la lingua originale -->
         <img class="icons" :src="`../../node_modules/country-flag-icons/1x1/${myFilm.original_language.toUpperCase()}.svg`" alt="">
@@ -42,6 +61,16 @@ export default {
 }
 p{
     color: white;
+    
+    strong{
+        padding-right: 10px;
+    }
 }
+.content-star-vote{
+    display: flex;
 
+    .star-vote{
+        color: yellow;
+    }
+}
 </style>

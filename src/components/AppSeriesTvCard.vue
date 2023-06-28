@@ -3,7 +3,21 @@
         // importazione props
         props:{
             mySeriesTv:Object
-        }
+        },
+        mounted() {
+        this.getStarVote
+        },
+        methods: {
+            getStarVote(){
+                let newVoteaverage = this.mySeriesTv.vote_average
+                let roundVote = Math.round(newVoteaverage / 2)
+
+                console.log(roundVote)
+                return roundVote
+
+            }
+            
+        },
 
     }
 </script>
@@ -16,7 +30,12 @@
         <img class="cover-movies" :src="`https://image.tmdb.org/t/p/w342/${mySeriesTv.poster_path}`" alt="">
         <p><strong>Titolo:</strong>{{ mySeriesTv.name }}</p>
         <p><strong>Titolo Originale</strong>:{{ mySeriesTv.original_name }}</p>
-        <p><strong>Voto</strong>:{{ mySeriesTv.vote_average }}</p>
+
+        <div class="content-star-vote">
+            <p class="star-vote" v-for="(star,index) in getStarVote()">
+                <i class="fa-star fa-solid"></i>
+            </p>
+        </div>
         
         <!-- inserita una img con percorso nei node_modules per prendere le country flag che rappresenteranno la lingua originale -->
         <img class="icons" :src="`../../node_modules/country-flag-icons/1x1/${mySeriesTv.original_language.toUpperCase()}.svg`" >
@@ -36,6 +55,18 @@
     }
     p{
         color: white;
+
+        strong{
+            padding-right: 10px;
+            
+        }
+    }
+    .content-star-vote{
+        display: flex;
+
+        .star-vote{
+            color: yellow;
+        }
     }
 
 </style>
