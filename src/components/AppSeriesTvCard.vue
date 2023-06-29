@@ -37,19 +37,20 @@
         <div class="content-description overlay">
             <p><strong>Titolo:</strong>{{ mySeriesTv.name }}</p>
             <p><strong>Titolo Originale:</strong>{{ mySeriesTv.original_name }}</p>
-            <p><strong>Descrizione:</strong>{{ mySeriesTv.overview }}</p>
-
             <div class="content-star-vote">
                 <!-- cicliamo le stelline in base al numero della valutazione arrotondato nella funzione -->
                 <p class="star-vote" v-for="(star,index) in getStarVote()">
                     <i class="fa-star fa-solid"></i>
                 </p>
             </div>
-        
             <!-- inserita una img con percorso nei node_modules per prendere le country flag che rappresenteranno la lingua originale -->
             <img class="icons" :src="`../../node_modules/country-flag-icons/1x1/${mySeriesTv.original_language.toUpperCase()}.svg`" >
             <!-- aggiunta la proprietà toUpperCase perche le country-flag sono in maiuscolo -->
 
+            
+            <p><strong>Overview:</strong>{{ mySeriesTv.overview }}</p>
+        
+            
         </div>
     </div>
 </template>

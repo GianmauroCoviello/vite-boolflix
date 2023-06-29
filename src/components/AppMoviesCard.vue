@@ -38,8 +38,7 @@ export default {
         <div class="content-description overlay">
             <p><strong>Titolo:</strong>{{ myFilm.title }}</p>
             <p><strong>Titolo Originale:</strong>{{ myFilm.original_title }}</p>
-            <p><strong>Descrizione:</strong>{{ myFilm.overview }}</p>
-            <div class="content-star-vote">
+            
             <!-- cicliamo le stelline in base al numero della valutazione arrotondato nella funzione -->
             <div class="content-star-vote">
                 <p class="star-vote" v-for="(star,index) in getStarVote()">
@@ -49,12 +48,13 @@ export default {
             
             
             <!-- inserita una img con percorso nei node_modules per prendere le country flag che rappresenteranno la lingua originale -->
-            <img class="icons" :src="`../../node_modules/country-flag-icons/1x1/${myFilm.original_language.toUpperCase()}.svg`" alt="">
+            <img class="icons" :src="`../../node_modules/country-flag-icons/1x1/${myFilm.original_language.toUpperCase()}.svg`" alt=""><br>
             <!-- aggiunta la proprietà toUpperCase perche le country-flag sono in maiuscolo -->
+            <p><strong>Descrizione:</strong>{{ myFilm.overview }}</p>
         
         </div>
     </div>         
-    </div>
+    
 </template>
 
 <!-- parte di style -->
@@ -87,6 +87,7 @@ export default {
             display: flex;
             padding-left: 5px;
 
+
             .star-vote{
                 color: yellow;
                 padding: 0;
@@ -95,6 +96,8 @@ export default {
 
         .content-description{
             padding: 30px 20px;
+            overflow-y: auto;
+            
             
         }
 

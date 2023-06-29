@@ -28,7 +28,7 @@ export default {
 		getMovies(){
 			// dichiaro una variabile che conterrà l'API dei film in store
 			let moviesUrl = store.apiMovies
-      		let seriesTvUrl= store.apiSeriesTv
+      let seriesTvUrl= store.apiSeriesTv
 			
 			// condizione: se sulla barra di ricerca la stringa e diversa da stringa vuota, allora aggiungo una query string con un valore definito dalla parola inserita nell'input
 			if (store.SearchText != '') {
