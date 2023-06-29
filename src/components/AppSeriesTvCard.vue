@@ -48,7 +48,7 @@
             <!-- aggiunta la proprietà toUpperCase perche le country-flag sono in maiuscolo -->
 
             
-            <p><strong>Overview:</strong>{{ mySeriesTv.overview }}</p>
+            <p><strong>Descrizione:</strong>{{ mySeriesTv.overview }}</p>
         
             
         </div>

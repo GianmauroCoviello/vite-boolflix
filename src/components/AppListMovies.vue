@@ -34,7 +34,7 @@ export default {
             <div class="container-card" v-for="(serie,index) in store.seriesArray"  :key="index">
                 <!-- inserita la props nel padre -->
                 
-                <!-- <AppSeriesTvCard :mySeriesTv="serie"/> -->
+                <AppSeriesTvCard :mySeriesTv="serie"/>
                 
             </div>
             
